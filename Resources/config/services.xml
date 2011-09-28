@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="sm_memcache.port" />
+        <parameter key="sm_memcache.host" />
+        <parameter key="sm_memcache.use_mock" />
+        <parameter key="sm_memcache.factory" >SM\MemcacheBundle\MemcacheFactory</parameter>
+    </parameters>
+
+    <services>
+        <service id="sm_memcache" class="Memcache"
+                 factory-class="%sm_memcache.factory%"
+                 factory-method="create">
+            <argument>%sm_memcache.host%</argument>
+            <argument>%sm_memcache.port%</argument>
+            <argument>%sm_memcache.use_mock%</argument>
+        </service>
+    </services>
+    <!--
+    <services>
+        <service id="sm_memcache.memcache.factory" class="%sm_memcache.factory.class%">
+            <argument>%sm_memcache.memcache.port%</argument>
+            <argument>%sm_memcache.memcache.host%</argument>
+        </service>
+        <service id="memcache" class="\Memcache"
+        factory-service="sm_memcache.memcache.factory"
+             factory-method="create"
+        >
+        </service>
+    </services>
+
+    -->
+</container>
