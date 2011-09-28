@@ -8,9 +8,9 @@ Instalation
 
 Add to deps::
 
-[SMMemcacheBundle]
-    git=git://github.com:tarjei/MemcacheBundle.git
-    target=/bundles/SM/MemcacheBundle
+    [SMMemcacheBundle]
+        git=git://github.com:tarjei/MemcacheBundle.git
+        target=/bundles/SM/MemcacheBundle
 
 
 Then register the bundle with your kernel::
