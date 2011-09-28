@@ -6,7 +6,8 @@ This is a simple bundle that creates a memcached service that you can use.
 Instalation
 -----------
 
-Add to deps:
+Add to deps::
+
 [SMMemcacheBundle]
     git=git://github.com:tarjei/MemcacheBundle.git
     target=/bundles/SM/MemcacheBundle
