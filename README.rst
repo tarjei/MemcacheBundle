@@ -18,7 +18,7 @@ Then register the bundle with your kernel::
     // in AppKernel::registerBundles()
     $bundles = array(
         // ...
-        new SM\Memcache\SMMemcacheBundle(),
+        new SM\MemcacheBundle\SMMemcacheBundle(),
         // ...
     );
 
