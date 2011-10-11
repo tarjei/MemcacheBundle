@@ -36,7 +36,7 @@ Configuration
 In your prod/dev environment::
 
     # app/config/config.yml
-    memcache:
+    sm_memcache:
         use_mock: false
         port: 11211
         host: localhost
