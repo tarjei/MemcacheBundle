@@ -1,7 +1,10 @@
 MemcacheBundle
 ~~~~~~~~~~~~~~
 
-This is a simple bundle that creates a memcached service that you can use. The service works with both PHP Memcache extensions (i.e. both http://php.net/memcache and http://php.net/memcached)
+This is a simple bundle that creates a memcached service that you can use. 
+
+Note: The service supports creating both PHP Memcache extensions (i.e. both http://php.net/memcache and http://php.net/memcached), BUT it does not protect you
+from differences in the two services interfaces as it returns the raw object.
 
 Instalation
 -----------
