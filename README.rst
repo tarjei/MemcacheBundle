@@ -1,7 +1,7 @@
 MemcacheBundle
 ~~~~~~~~~~~~~~
 
-This is a simple bundle that creates a memcached service that you can use.
+This is a simple bundle that creates a memcached service that you can use. The service works with both PHP Memcache extensions (i.e. both http://php.net/memcache and http://php.net/memcached)
 
 Instalation
 -----------
@@ -15,6 +15,8 @@ Add to deps::
 
 Then register the bundle with your kernel::
 
+    
+    // app/AppKernel.php
     // in AppKernel::registerBundles()
     $bundles = array(
         // ...
@@ -51,7 +53,11 @@ In your test environment::
 Usage
 -----
 
-The service is just the normal Memcache object (http://no.php.net/memcache) so you can use the normal methods.
+The service is just the normal Memcache object (http://php.net/memcache) so you can use the normal methods.
 
 For tests there is a special MockMemcache object that you can use to stub out the memcache service.
 
+TODO
+----
+ * Support multiple memcache servers.
+ * Support more methods in the mock module.

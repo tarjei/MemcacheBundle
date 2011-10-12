@@ -25,6 +25,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode("port")->defaultValue(11211)->end()
             ->scalarNode("host")->defaultValue("localhost")->end()
             ->scalarNode("use_mock")->defaultValue(false)->end()
+            ->scalarNode("class")->end()
             ->scalarNode("factory")->defaultValue("SM\\MemcacheBundle\\MemcacheFactory")->end()
             ->end();
         return $treeBuilder;
