@@ -32,7 +32,7 @@ class SMMemcacheExtension extends Extension
             } elseif (class_exists("\\Memcache")) {
                 $config['class'] = "\\Memcache";
             } else {
-                throw new Exception("No memcached extension found. Please
+                throw new \Exception("No memcached extension found. Please
                     install one.");
             }
 

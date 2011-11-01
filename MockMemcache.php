@@ -26,7 +26,7 @@ class MockMemcache {
 
 
     public function add ( $key , $var, $flag = 0, $expire = 0) {
-        if (isset($this->_cache[$key])) throw new Exception("Memcache::add() stores variable var with key only if such key doesn't exist at the server yet");
+        if (isset($this->_cache[$key])) throw new \Exception("Memcache::add() stores variable var with key only if such key doesn't exist at the server yet");
         $this->set($key, $var, $flag, $expire);
         $this->_cache[$key] =  $var;
     }
