@@ -24,15 +24,35 @@ class MockMemcache {
         return (isset($this->_cache[$key])) ? unserialize($this->_cache[$key]): null;
     }
 
+    
 
     public function add ( $key , $var, $flag = 0, $expire = 0) {
         if (isset($this->_cache[$key])) throw new \Exception("Memcache::add() stores variable var with key only if such key doesn't exist at the server yet");
         $this->set($key, $var, $flag, $expire);
         $this->_cache[$key] =  $var;
     }
+    /**
+     * NB! The api for set differs between memcache and memcached!
+     */
     public function set ( $key , $var , $flag = 0, $expire = 0 ) {
         $this->_cache[$key] = serialize($var);
         $this->_cacheVars[$key] = array($flag, $expire);
+    }
+
+    public function getMulti($ids) {
+        $ret = array();
+        foreach($ids as $key) {
+            if ($this->getKeyInfo($key) != null) {
+                $ret[$key] = $this->get($key);
+            }
+        }
+        return $ret;
+    }
+
+    public function setMulti($keys, $exp) {
+        foreach ($keys as $key => $value) {
+            $this->set($key, $value, 0, $exp);
+        }
     }
 
     public function addServer ( $host , $port = 11211 , $persistent , $weight , $timeout , $retry_interval , $status ,  $failure_callback , $timeoutms ) {
@@ -65,6 +85,7 @@ class MockMemcache {
     }
     public function setServerParams ( $host , $port = 11211 , $timeout , $retry_interval = false , $status , $failure_callback  ) {
     }
+
 
 }
 
