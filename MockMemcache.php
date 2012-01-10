@@ -10,6 +10,7 @@ namespace SM\MemcacheBundle;
 class MockMemcache {
 
     private $_cache = array();
+    private $_cacheVars = array();
 
     /**
      * For querying the key info
@@ -17,6 +18,10 @@ class MockMemcache {
      */
     public function getKeyInfo($key) {
         return array($this->get($key), (isset($this->cacheVars[$key])) ? $this->_cacheVars[$key] : null);
+    }
+
+    private function hasKey($key) {
+        return (isset($this->_cache[$key]));
     }
 
 
@@ -42,9 +47,10 @@ class MockMemcache {
     public function getMulti($ids) {
         $ret = array();
         foreach($ids as $key) {
-            if ($this->getKeyInfo($key) != null) {
+            if ($this->hasKey($key)) {
                 $ret[$key] = $this->get($key);
             }
+
         }
         return $ret;
     }
