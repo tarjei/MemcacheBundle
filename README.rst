@@ -56,7 +56,7 @@ In your test environment::
 Usage
 -----
 
-.. raw::php
+The service is named sm_memcache, it returns a normal \Memcache or \Memcached php object::
 
     $memcached = $container->get("sm_memcache");
     $memcached->set("someKey", "somevalue");
