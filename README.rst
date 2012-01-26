@@ -49,12 +49,18 @@ In your prod/dev environment::
 In your test environment::
 
     # app/config/config.yml
-    memcache:
+    sm_memcache:
         use_mock: true
 
 
 Usage
 -----
+
+.. raw::php
+
+    $memcached = $container->get("sm_memcache");
+    $memcached->set("someKey", "somevalue");
+
 
 The service is just the normal Memcache object (http://php.net/memcache) so you can use the normal methods.
 
