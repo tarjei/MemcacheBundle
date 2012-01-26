@@ -12,7 +12,7 @@ Instalation
 Add to deps::
 
     [SMMemcacheBundle]
-        git=git://github.com/MemcacheBundle.git
+        git=git://github.com/tarjei/MemcacheBundle.git
         target=/bundles/SM/MemcacheBundle
 
 
