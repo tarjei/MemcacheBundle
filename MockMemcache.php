@@ -42,6 +42,7 @@ class MockMemcache {
     public function set ( $key , $var , $flag = 0, $expire = 0 ) {
         $this->_cache[$key] = serialize($var);
         $this->_cacheVars[$key] = array($flag, $expire);
+        return true;
     }
 
     public function getMulti($ids) {
