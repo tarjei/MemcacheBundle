@@ -12,7 +12,7 @@ Instalation
 Add to deps::
 
     [SMMemcacheBundle]
-        git=git://github.com/MemcacheBundle.git
+        git=git://github.com/tarjei/MemcacheBundle.git
         target=/bundles/SM/MemcacheBundle
 
 
@@ -49,12 +49,18 @@ In your prod/dev environment::
 In your test environment::
 
     # app/config/config.yml
-    memcache:
+    sm_memcache:
         use_mock: true
 
 
 Usage
 -----
+
+The service is named sm_memcache, it returns a normal \Memcache or \Memcached php object::
+
+    $memcached = $container->get("sm_memcache");
+    $memcached->set("someKey", "somevalue");
+
 
 The service is just the normal Memcache object (http://php.net/memcache) so you can use the normal methods.
 
