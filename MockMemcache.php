@@ -26,7 +26,7 @@ class MockMemcache {
 
 
     public function get ( $key , &$flags = 0 ) {
-        return (isset($this->_cache[$key])) ? unserialize($this->_cache[$key]): null;
+        return (isset($this->_cache[$key])) ? unserialize($this->_cache[$key]): FALSE;
     }
 
     
