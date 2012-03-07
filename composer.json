@@ -9,7 +9,7 @@
         {
             "name": "Tarjei Huse",
             "email": "tarjei.huse@gmail.com"
-        },
+        }
     ],
     "require": {
         "php": ">=5.3.2",
