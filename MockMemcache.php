@@ -62,6 +62,15 @@ class MockMemcache {
         }
     }
 
+    
+    public function delete ( $key , $timeout = 0  ) {
+        if(isset($this->_cache[$key])){
+            unset($this->_cache[$key]);
+            return true;
+        }
+        return false;
+    }
+
     public function addServer ( $host , $port = 11211 , $persistent , $weight , $timeout , $retry_interval , $status ,  $failure_callback , $timeoutms ) {
     }
     public function close () {
@@ -69,8 +78,6 @@ class MockMemcache {
     public function connect ( $host , $port , $timeout  ) {
     }
     public function decrement ( $key , $value = 1  ) {
-    }
-    public function delete ( $key , $timeout = 0  ) {
     }
     public function flush ( ) {
     }
