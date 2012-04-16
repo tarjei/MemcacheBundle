@@ -20,5 +20,5 @@
             "SM\\MemcacheBundle": ""
         }
     },
-    "target-dir": "SM\\MemcacheBundle"
+    "target-dir": "SM/MemcacheBundle"
 }
