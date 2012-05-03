@@ -25,9 +25,6 @@ class SMMemcacheExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-//        var_dump($config['use_mock']);
-//        var_dump(class_exists($config['class']));die();
-
         if (!$config['use_mock']) {
             if (false == (isset($config['class']) && $config['class'] != "" && class_exists($config['class']))) {
                 /* we prefer the new Extension. */
