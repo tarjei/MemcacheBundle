@@ -22,12 +22,13 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('sm_memcache');
         $rootNode->children()
-            ->scalarNode("port")->defaultValue(11211)->end()
-            ->scalarNode("host")->defaultValue("localhost")->end()
-            ->scalarNode("use_mock")->defaultValue(false)->end()
-            ->scalarNode("class")->end()
-            ->scalarNode("factory")->defaultValue("SM\\MemcacheBundle\\MemcacheFactory")->end()
+            ->scalarNode('port')->defaultValue(11211)->end()
+            ->scalarNode('host')->defaultValue('localhost')->end()
+            ->scalarNode('use_mock')->defaultValue(false)->end()
+            ->scalarNode('class')->defaultValue('')->end()
+            ->scalarNode('factory')->defaultValue('SM\\MemcacheBundle\\MemcacheFactory')->end()
             ->end();
+
         return $treeBuilder;
     }
 }
