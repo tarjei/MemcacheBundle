@@ -22,18 +22,5 @@
             <argument>%sm_memcache.class%</argument>
         </service>
     </services>
-    <!--
-    <services>
-        <service id="sm_memcache.memcache.factory" class="%sm_memcache.factory.class%">
-            <argument>%sm_memcache.memcache.port%</argument>
-            <argument>%sm_memcache.memcache.host%</argument>
-        </service>
-        <service id="memcache" class="\Memcache"
-        factory-service="sm_memcache.memcache.factory"
-             factory-method="create"
-        >
-        </service>
-    </services>
 
-    -->
 </container>
