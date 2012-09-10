@@ -27,7 +27,17 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('use_mock')->defaultValue(false)->end()
             ->scalarNode('class')->defaultValue('')->end()
             ->scalarNode('factory')->defaultValue('SM\\MemcacheBundle\\MemcacheFactory')->end()
-            ->end();
+            ->arrayNode('options')
+                ->info('Options for \Memcached class. Ignored for \Memcache instance.')
+//                ->useAttributeAsKey('name') if enable throws exception, that array is string. Symfony bug?
+                ->prototype('array')
+                    ->children()
+                        ->scalarNode('name')->isRequired()->info('Final option name will be constant \\Memcached::OPT_*OPTION_NAME*')->end()
+                        ->scalarNode('value')->isRequired()->info('Final option value will be constant \\Memcached::*OPTION_VALUE*')->end()
+                    ->end()
+                ->end()
+            ->end()
+        ->end();
 
         return $treeBuilder;
     }
