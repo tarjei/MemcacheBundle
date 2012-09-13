@@ -43,5 +43,14 @@ class SMMemcacheExtension extends Extension
         $container->setParameter('sm_memcache.use_mock', $config['use_mock']);
         $container->setParameter('sm_memcache.factory', $config['factory']);
         $container->setParameter('sm_memcache.class', $config['class']);
+        $definition = $container->getDefinition('sm_memcache');
+        $definition->setClass($config['class']);
+        $options = array();
+        foreach($config['options'] as $option) {
+            $optionName = constant('Memcached::OPT_' . strtoupper($option['name']));
+            $optionValue = constant('Memcached::' . strtoupper($option['value']));
+            $options[$optionName] = $optionValue;
+        }
+        $definition->replaceArgument(4, $options);
     }
 }

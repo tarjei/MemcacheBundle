@@ -9,7 +9,7 @@
         <parameter key="sm_memcache.host" />
         <parameter key="sm_memcache.use_mock" />
         <parameter key="sm_memcache.factory" >SM\MemcacheBundle\MemcacheFactory</parameter>
-        <parameter key="sm_memcache.class" ></parameter>
+        <parameter key="sm_memcache.class" />
     </parameters>
 
     <services>
@@ -20,6 +20,7 @@
             <argument>%sm_memcache.port%</argument>
             <argument>%sm_memcache.use_mock%</argument>
             <argument>%sm_memcache.class%</argument>
+            <argument type="collection" />
         </service>
     </services>
 

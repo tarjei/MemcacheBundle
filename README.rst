@@ -52,7 +52,6 @@ In your test environment::
     sm_memcache:
         use_mock: true
 
-
 Usage
 -----
 
@@ -65,6 +64,27 @@ The service is named sm_memcache, it returns a normal \Memcache or \Memcached ph
 The service is just the normal Memcache object (http://php.net/memcache) so you can use the normal methods.
 
 For tests there is a special MockMemcache object that you can use to stub out the memcache service.
+
+Options
+-----
+If you use Memcached class, you can pass options to instance in config. Example::
+
+    sm_memcache:
+        port: 11211
+        host: localhost
+        class: Memcached
+        options:
+            igbinary:
+                name: serializer
+                value: serializer_igbinary
+
+This example sets `Memcached::OPT_SERIALIZER` to `Memcached::SERIALIZER_IGBINARY`
+Before applying options are converted in following format:
+
+* option name is converted to Memcached::OPT_*UPPERCASE_NAME* constant
+* option value is converted to Memcached::\*UPPERCASE_NAME\*
+
+If you use Memcache class, options block is ignored.
 
 TODO
 ----
