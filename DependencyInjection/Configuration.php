@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('class')->defaultValue('')->end()
             ->scalarNode('factory')->defaultValue('SM\\MemcacheBundle\\MemcacheFactory')->end()
             ->arrayNode('options')
-                ->info('Options for \Memcached class. Ignored for \Memcache instance.')
+//                ->info('Options for \Memcached class. Ignored for \Memcache instance.')
 //                ->useAttributeAsKey('name') if enable throws exception, that array is string. Symfony bug?
                 ->prototype('array')
                     ->children()
