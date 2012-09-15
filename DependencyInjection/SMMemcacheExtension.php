@@ -29,15 +29,14 @@ class SMMemcacheExtension extends Extension
             if (false == (isset($config['class']) && $config['class'] != "" && class_exists($config['class']))) {
                 /* we prefer the new Extension. */
                 if (class_exists('\\Memcached')) {
-                    $config['class']= '\\Memcached';
-                } elseif (class_exists('\\Memcache')) {
-                    $config['class'] = '\\Memcache';
+                    $config['class']= 'Memcached';
+                } elseif (class_exists('Memcache')) {
+                    $config['class'] = 'Memcache';
                 } else {
                     throw new \Exception('No memcached extension found. Please install one.');
                 }
             }
         }
-
         $container->setParameter('sm_memcache.host', $config['host']);
         $container->setParameter('sm_memcache.port', $config['port']);
         $container->setParameter('sm_memcache.use_mock', $config['use_mock']);
