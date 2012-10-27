@@ -4,7 +4,6 @@
     "description": "Bundle for using memcached with symfony",
     "keywords": ["memcache", "memcached"],
     "license": "MIT",
-    "version": "master",
     "authors": [
         {
             "name": "Tarjei Huse",
