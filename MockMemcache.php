@@ -7,7 +7,7 @@ namespace SM\MemcacheBundle;
  * @author Tarjei Huse (tarjei@scanmine.com) http://www.kraken.no
  */
 
-class MockMemcache {
+class MockMemcache extends \Memcached {
 
     private $_cache = array();
     private $_cacheVars = array();
