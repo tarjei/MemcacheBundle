@@ -45,7 +45,7 @@ class SMMemcacheExtension extends Extension
         $definition = $container->getDefinition('sm_memcache');
         $definition->setClass($config['class']);
         $options = array();
-        foreach($config['options'] as $option) {
+        foreach ($config['options'] as $option) {
             $optionName = constant('Memcached::OPT_' . strtoupper($option['name']));
             $optionValue = constant('Memcached::' . strtoupper($option['value']));
             $options[$optionName] = $optionValue;
