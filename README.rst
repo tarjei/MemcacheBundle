@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This project is no longer beeing developed. 
+
 MemcacheBundle
 ~~~~~~~~~~~~~~
 
