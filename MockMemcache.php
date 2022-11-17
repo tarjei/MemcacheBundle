@@ -12,6 +12,8 @@ class MockMemcache {
     private $_cache = array();
     private $_cacheVars = array();
 
+    private $test = true;
+
     /**
      * For querying the key info
      * @return array array of key, array($flag, $expire)
